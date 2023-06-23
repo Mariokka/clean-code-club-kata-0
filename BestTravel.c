@@ -2,9 +2,9 @@
 
 int chooseBestSum(int maxDistance, int maxNumberOfCities, int distances[], int distancesSize) {
     int maxSum = -1;
-	int indexes[maxNumberOfCities];
+    int indexes[maxNumberOfCities];
 
-	travelInfo info = fillTravelInfo(maxDistance, maxNumberOfCities, distances, distancesSize);
+    travelInfo info = fillTravelInfo(maxDistance, maxNumberOfCities, distances, distancesSize);
     fillWithFirstIndexes(indexes, maxNumberOfCities);
     chooseMaxPossibleSum(info, indexes, &maxSum);
 
@@ -12,14 +12,14 @@ int chooseBestSum(int maxDistance, int maxNumberOfCities, int distances[], int d
 }
 
 travelInfo fillTravelInfo(int maxDistance, int maxNumberOfCities, int distances[], int distancesSize) {
-	travelInfo info;
+    travelInfo info;
 
-	info.maxDistance = maxDistance;
-	info.maxNumberOfCities = maxNumberOfCities;
-	info.distances = distances;
-	info.distancesSize = distancesSize;
+    info.maxDistance = maxDistance;
+    info.maxNumberOfCities = maxNumberOfCities;
+    info.distances = distances;
+    info.distancesSize = distancesSize;
 
-	return info;
+    return info;
 }
 
 void fillWithFirstIndexes(int indexes[], int maxNumberOfCities) {
@@ -37,7 +37,7 @@ void chooseMaxPossibleSum(travelInfo info, int indexes[], int *maxSum) {
 }
 
 int isLastIndexWithinBoundaries(int indexes[], travelInfo info) {
-	return indexes[info.maxNumberOfCities - 1] < info.distancesSize;
+    return indexes[info.maxNumberOfCities - 1] < info.distancesSize;
 }
 
 int calculateSumWithCurrentIndexes(int indexes[], travelInfo info) {
